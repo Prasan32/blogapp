@@ -1,0 +1,26 @@
+<center>
+    <h2>Create New Post</h2>
+</center>
+<form action="/createNewPost" class="text-center border border-light p-5" method="POST" enctype="multipart/form-data">
+
+    <input type="text" class="form-control mb-4" name="title" placeholder="Title">
+
+
+    <input type="file" class="form-control mb-4" name="image" placeholder="Image">
+
+    <input type="text" class="form-control mb-4" name="author" placeholder="Author"><br>
+    <div class="entry">
+        <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+        <label for="">Description:</label>
+        <div class="body">
+            <textarea name="description" placeholder="Description"></textarea>
+            <script>
+                CKEDITOR.replace('description');
+            </script>
+            {{body}}
+        </div>
+    </div>
+    {{!-- <textarea name="description" cols="125" rows="10" placeholder="Description"></textarea> --}}
+    <br>
+    <center><button class="btn btn-primary mb-2" type="submit">Save</button></center>
+</form>

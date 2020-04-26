@@ -1,0 +1,35 @@
+<h1>Edit page</h1>
+<div class="container">
+    <form action="/edit/{{post.id}}" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="">Title:</label>
+            <input type="text" name="title" class="form-control" value={{post.title}}>
+        </div>
+        <div class="form-group">
+            <label for="">Image:</label>
+            <input type="file" name="image" class="form-control" value="{{post.image}}">
+        </div>
+        <div class="form-group">
+            <label for="">Author:</label>
+            <input type="text" name="author" class="form-control" value="{{post.author}}">
+        </div>
+        <div class="form-group">
+            <div class="entry">
+                <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+                <label for="">Description:</label>
+                <div class="body">
+                    <textarea name="description" placeholder="Description">{{post.description}}</textarea>
+                    <script>
+                        CKEDITOR.replace('description');
+                    </script>
+                    {{body}}
+                </div>
+            </div>
+            {{!-- <textarea name="description" id="" cols="125" rows="10"
+                placeholder="Description">{{post.description}}</textarea> --}}
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-8 mt-3">
+        <div class="container mt-4 pt-2" style="background-color: white;">
+            <div>
+                <center>
+                    <h3>{{post.title}}</h3>
+                </center>
+
+                <div class="mt-4">
+                    <center><img src="/uploads/{{post.image}}" height="300" width="50%" alt=""></center>
+                </div>
+                <br><br>
+                <small>{{post.createdAt}},{{post.author}}</small>
+                <p>{{post.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <h3>Popular Posts</h3>
+        {{#each posts}}
+        {{!-- <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/uploads/{{image}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <a href="/detail/{{id}}" class="btn btn-primary">View</a>
+            </div>
+        </div> --}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">{{description}}</p>
+                <a href="/detail/{{id}}" class="btn btn-primary">View</a>
+            </div>
+        </div><br>
+        {{/each}}
+    </div>
+</div>
+<section>
+    <div class="container">
+        <header>
+            <h1>Latest News</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse laborum, officia delectus
+                corrupti
+                modi
+                natus?</p>
+        </header>
+
+        <main>
+            {{#each posts}}
+            <div class="singleBlog">
+                <img src="/uploads/{{image}}" class="imgs" alt="">
+                <div class="blogContent">
+                    <h3>{{title}}</h3>
+                    <p>By <a href="#">{{author}}</a></p>
+                    <a href="/detail/{{id}}" class="btn btn-info">Read More</a>
+                </div>
+            </div>
+            {{/each}}
+        </main>
+    </div>
+</section>

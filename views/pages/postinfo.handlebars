@@ -1,0 +1,32 @@
+<center>
+    <h1>Posts Information</h1>
+</center>
+<br>
+<h5>Total number of post:{{count}}</h5>
+
+<table class="table  table-bordered  " style="width: 100%;border:6px ridge rgb(8, 7, 97)">
+    <thead style="background-color: black; color:white">
+        <tr>
+            <th>SID:</th>
+            <th>Title:</th>
+            <th><b>Author:</th>
+            <th>Post_date:</th>
+            <th></th>
+        </tr>
+    </thead>
+    {{#each posts}}
+    <tr style="background-color: black; color:white">
+        <td>{{id}}</td>
+        <td>{{title}}</td>
+        <td>{{author}}</td>
+        <td>{{createdAt}}</td>
+        <td>
+            <a href="/edit/{{id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+            <a href="/delete/{{id}}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+        </td>
+
+
+    </tr>
+    {{/each}}
+
+</table>

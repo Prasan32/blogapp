@@ -1,0 +1,75 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+
+        <div class="col-9">
+            <center>
+                <h1>BLOG</h1>
+            </center>
+            {{#each post}}
+            <div style="border: 1px ridge rgb(238, 230, 230);background-color:white;" class="py-3 mb-4 pl-3 ">
+                <div class="media">
+                    <img src="/uploads/{{image}}" width="220" height="200" class="img-fluid mr-3" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{title}}</h5>
+                        <small class="text-muted">{{createdAt}},{{author}}</small>
+                        <p>{{description}}<button class="btn btn-info float-right mr-4"><a href=" /detail/{{id}}">Read
+                                    More</a></button></p>
+
+
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+
+        </div>
+        <div class="col mt-3">
+
+            <h3>
+                <u>Popular posts</u>
+            </h3>
+
+            <div class="container pt-2" style="background-color:white;">
+                {{#each posts}}
+                <ul>
+                    <li> <a href="/detail/{{id}}" class="anc">{{title}}</a> </li>
+                </ul>
+                {{/each}}
+                <b>About us</b><br>
+                <p>Want to know more about us ?</p>
+                <a href="/about" class="anc">Click here</a><br><br>
+                <b>Contact us</b><br>
+                prasannakb440@gmail.com
+                9806952585 <br>
+                Butwal-6,Amarpath <br>
+                To know more
+                <a href="/contact" class="anc">click here</a>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <header>
+                <h1>Latest News</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse laborum, officia delectus
+                    corrupti
+                    modi
+                    natus?</p>
+            </header>
+
+            <main>
+                {{#each posts}}
+                <div class="singleBlog">
+                    <img src="/uploads/{{image}}" class="imgs" alt="">
+                    <div class="blogContent">
+                        <h3>{{title}}</h3>
+                        <p>By <a href="#">{{author}}</a></p>
+                        <a href="/detail/{{id}}" class="btn btn-info">Read More</a>
+                    </div>
+                </div>
+                {{/each}}
+            </main>
+        </div>
+    </section>
+</div>
